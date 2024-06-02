@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-boot-demo
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: coderslab
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
