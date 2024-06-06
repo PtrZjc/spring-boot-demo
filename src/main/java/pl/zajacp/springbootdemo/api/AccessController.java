@@ -4,10 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.zajacp.springbootdemo.access.User;
-import pl.zajacp.springbootdemo.access.UserService;
+import pl.zajacp.springbootdemo.user.User;
+import pl.zajacp.springbootdemo.user.UserService;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,10 +23,9 @@ public class AccessController {
     @PostMapping("sign-up")
     public String createUser(User user, Model model) {
         try {
-            userService.saveRegularUser(user);
+            userService.saveUser(user);
         } catch (Exception e) {
             model.addAttribute("errorMessage", e.getMessage());
-            model.addAttribute("user", user);
             return "sign-up";
         }
         model.addAttribute("success", true);
