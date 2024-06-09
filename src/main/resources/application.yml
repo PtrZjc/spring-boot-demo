@@ -13,3 +13,7 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
+my-properties:
+  number: 1
+  string: hi!
+  long-property-name: another
